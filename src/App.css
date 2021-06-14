@@ -1,0 +1,66 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+} 
+
+img{
+  position: fixed;
+  left: 0;
+  /*top: 0;*/
+  bottom: 0; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.headerDiv{
+  background-color: #000000a6;
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+.headerDiv h1{
+  font-size: 60px;
+  color: #ffe01b;
+  -webkit-text-stroke: 2px  #ffffffad;
+  letter-spacing: 2px;
+ 
+}
+
+button{
+  padding: 5px;
+  border-radius: 50px;
+  border: 2px #000000 ridge;
+  background-color: #9a4f52;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #434756;
+}
+
+.userHolder{
+  margin-top: 5%;
+}
+
+.userDiv{
+  background-color: #e0ecff;
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 2%;
+  border: 1px solid #000000;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 200px;
+  box-shadow: 5px 5px 10px #000000;
+  /* flex-wrap: wrap; */
+}
+
+
