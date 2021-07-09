@@ -1,6 +1,11 @@
 body{
   padding: 0;
   margin: 0;
+  background: url('https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000');
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
 
 .App {
@@ -10,7 +15,6 @@ body{
 img{
   position: fixed;
   left: 0;
-  /*top: 0;*/
   bottom: 0; 
   width: 100%;
   height: 100%;
@@ -22,6 +26,7 @@ img{
   background-color: #000000a6;
   margin-top: 0;
   padding-top: 5px;
+  
 }
 
 .headerDiv h1{

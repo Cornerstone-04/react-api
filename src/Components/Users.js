@@ -33,10 +33,10 @@ function Users() {
 
   return (
     <div className="apiDiv">
-      <img
+      {/* <img
         alt="background"
-        src="https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000"
-      />
+        src=""
+      /> */}
       <div className="headerDiv">
         <h1>API DISPLAY</h1>
       </div>
