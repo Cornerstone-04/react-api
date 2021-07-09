@@ -32,7 +32,17 @@ img{
  
 }
 
+.filter{
+  padding: 8px;
+  width: 30%;
+  border: none;
+  border-radius: 20px;
+  margin: 0 auto;
+  outline: none; 
+}
+
 button{
+  margin-top: 10px;
   padding: 5px;
   border-radius: 50px;
   border: 2px #000000 ridge;
@@ -40,6 +50,8 @@ button{
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
+  outline: none;
+  /* display: none; */
 }
 
 button:hover{
@@ -60,7 +72,4 @@ button:hover{
   border-bottom-right-radius: 30px;
   width: 200px;
   box-shadow: 5px 5px 10px #000000;
-  /* flex-wrap: wrap; */
 }
-
-

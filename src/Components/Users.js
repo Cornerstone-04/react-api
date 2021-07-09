@@ -1,50 +1,75 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
+import "../App.css";
 
 function Users() {
-const [data, setData] = useState([]);
-const getApi = () => {
-    fetch('https://jsonplaceholder.typicode.com/users/')
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
+  const [data, setData] = useState([]);
+  const [profileData, setProfileData] = useState([]);
+  const getApi = () => {
+    fetch("https://jsonplaceholder.typicode.com/users/")
+      .then((response) => response.json())
+      .then((json) => {
         setData(json);
-    })
-}
+        setProfileData(json);
+      });
+  };
 
-    useEffect(() => {
-        getApi();
-    }, [])
+  useEffect(() => {
+    getApi();
+  }, []);
 
-    return (
-        <div className="apiDiv">
-            <img alt="background" src="https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000"/>
-            <div className="headerDiv">
-                <h1>
-                    API DISPLAY
-                </h1> 
-            </div>
+  const filterItems = (e) => {
+    let text = e.target.value.toLowerCase();
+    console.log(text);
+    let newData = data.filter((item) => {
+      const values = Object.values(item).map((e) => "" + e);
+      let result = values.filter(
+        (value) => value.toLowerCase().indexOf(text) > -1
+      );
+      console.log(result);
+      return !!result.length;
+    });
+    setProfileData(newData);
+  };
 
-            <div className="btnDiv">
-                <button onClick={getApi}>Fetch Users</button>
+  return (
+    <div className="apiDiv">
+      <img
+        alt="background"
+        src="https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000"
+      />
+      <div className="headerDiv">
+        <h1>API DISPLAY</h1>
+      </div>
+
+      <div className="searchBar">
+        <input
+          type="text"
+          className="filter"
+          placeholder="Search items..."
+          onChange={filterItems}
+        />
+      </div>
+
+      <div className="btnDiv">
+        <button onClick={() => getApi()}>Fetch Users</button>
+      </div>
+      <div className="main">
+        <div className="userHolder">
+          {profileData.map((item) => (
+            <div className="userDiv" key={item.id}>
+              <p className="apiItem">{item.id} </p>
+              <p className="apiItem">{item.name}</p>
+              <p className="apiItem">{item.phone}</p>
+              <p className="apiItem">{item.username}</p>
+              <p className="apiItem"> {item.email}</p>
+              <p className="apiItem">{item.address.street}</p>
+              <p className="apiItem">{item.company.name}</p>
             </div>
-            <div className="main">
-                {/* {JSON.stringify(data)} */}
-                <div className="userHolder">
-                    {data.map(item =>
-                        <div className="userDiv" key={item.id}>
-                            <p>{item.id} </p>    
-                            <p>{item.name}</p>
-                            <p>{item.phone}</p>
-                            <p>{item.username}</p>
-                            <p>{item.email}</p>
-                            <p>{item.address.street}</p>
-                            <p>{item.company.name}</p>
-                        </div>
-                    )}
-                </div>
-            </div>
+          ))}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Users;
