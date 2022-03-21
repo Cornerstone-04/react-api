@@ -1,80 +1,114 @@
-body{
-  padding: 0;
-  margin: 0;
-  background: url('https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000');
+body {
+    padding: 0;
+    margin: 0;
+    background: url('https://images.pexels.com/photos/7438107/pexels-photo-7438107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000&h=1000');
+    /* background-position: center; */
+    background-size: cover;
 }
 
-body::-webkit-scrollbar{
-  display: none;
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .App {
-  text-align: center;
-} 
-
-img{
-  position: fixed;
-  left: 0;
-  bottom: 0; 
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+    text-align: center;
 }
 
-.headerDiv{
-  background-color: #000000a6;
-  margin-top: 0;
-  padding-top: 5px;
-  
+.headerDiv {
+    background-color: #000000a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 20px;
 }
 
-.headerDiv h1{
-  font-size: 60px;
-  color: #ffe01b;
-  -webkit-text-stroke: 2px  #ffffffad;
-  letter-spacing: 2px;
- 
+.headerDiv h1 {
+    font-size: 3rem;
+    color: #ffe01b;
+    -webkit-text-stroke: 2px #ffffffad;
+    letter-spacing: 2px;
 }
 
-.filter{
-  padding: 8px;
-  width: 30%;
-  border: none;
-  border-radius: 20px;
-  margin: 0 auto;
-  outline: none; 
+.filter {
+    padding: 8px;
+    width: 20rem;
+    height: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.5s;
+    border: 2px solid transparent;
 }
 
-button{
-  margin-top: 10px;
-  padding: 5px;
-  border-radius: 50px;
-  border: 2px #000000 ridge;
-  background-color: #9a4f52;
-  color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  /* display: none; */
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2px;
 }
 
-button:hover{
-  background-color: #434756;
+.filter:focus {
+    border: 2px solid #16161d;
 }
 
-.userHolder{
-  margin-top: 5%;
+.searchBar button {
+    height: 2.1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #9a4f52;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s, color 0.5s, border 0.5s;
 }
 
-.userDiv{
-  background-color: #e0ecff;
-  display: inline-block;
-  margin: 10px 20px;
-  padding: 2%;
-  border: 1px solid #000000;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  width: 200px;
-  box-shadow: 5px 5px 10px #000000;
+button:hover {
+    border: 2px #16161d solid;
+    background-color: transparent;
+    color: #16161d;
+}
+
+div.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userHolder {
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media(max-width: 480px) {
+    .searchBar {
+        width: 300px;
+        margin: 5px auto;
+    }
+    .userHolder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.userDiv {
+    background-color: #e0ecff;
+    /* margin: 10px 20px; */
+    padding: 2%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 5px 5px 10px #000000;
 }
