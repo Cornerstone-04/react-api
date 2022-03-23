@@ -4,6 +4,7 @@ import "../App.css";
 function Users() {
   const [data, setData] = useState([]);
   const [profileData, setProfileData] = useState([]);
+  
   const getApi = () => {
     fetch("https://jsonplaceholder.typicode.com/users/")
       .then((response) => response.json())
@@ -67,6 +68,7 @@ function Users() {
             </div>
           ))}{" "}
         </div>{" "}
+        
       </div>{" "}
     </div>
   );
