@@ -9,7 +9,18 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #009578, #05a562);
+    border-radius: 5px;
 }
 
 .App {
@@ -118,7 +129,8 @@ div.main {
 }
 
 .userDiv {
-    background-color: #e0ecff;
+    background-color: #009578;
+    color: #fff;
     /* margin: 10px 20px; */
     padding: 2%;
     border: 1px solid #000000;
