@@ -4,7 +4,7 @@ import "../App.css";
 function Users() {
   const [data, setData] = useState([]);
   const [profileData, setProfileData] = useState([]);
-  
+
   const getApi = () => {
     fetch("https://jsonplaceholder.typicode.com/users/")
       .then((response) => response.json())
@@ -31,6 +31,13 @@ function Users() {
     setProfileData(newData);
   };
 
+  const topScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="apiDiv">
       <div className="headerDiv">
@@ -49,8 +56,7 @@ function Users() {
             e.preventDefault();
           }}
         >
-          {" "}
-          Fetch{" "}
+         Go
         </button>{" "}
       </form>
       <div className="main">
@@ -68,8 +74,12 @@ function Users() {
             </div>
           ))}{" "}
         </div>{" "}
-        
       </div>{" "}
+      <div className="scroll">
+        <button onClick={topScroll}>
+          <i class="fa-solid fa-arrow-up-long"></i>
+        </button>
+      </div>
     </div>
   );
 }
